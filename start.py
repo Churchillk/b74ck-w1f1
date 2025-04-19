@@ -1,7 +1,11 @@
 import subprocess
 
 # Start hostapd
-subprocess.run(['sudo', 'hostapd', './hostapd.conf'])
+hostapd_process = subprocess.Popen(['sudo', 'hostapd', './hostapd.conf'])
 
 # Start dnsmasq
-subprocess.run(['sudo', 'dnsmasq', '-C', './dnsmasq.conf'])
+dnsmasq_process = subprocess.Popen(['sudo', 'dnsmasq', '-C', './dnsmasq.conf'])
+
+# Optional: Wait for both processes if you want your script to hold execution
+hostapd_process.wait()
+dnsmasq_process.wait()
