@@ -20,3 +20,8 @@ sudo sysctl net.ipv4.ip_forward=1
 
 <!-- To make this change persistent across reboots, add the following line to /etc/sysctl.conf: -->
 net.ipv4.ip_forward=1
+
+<!-- to show if iface exists -->
+ip link show wlan1
+
+
